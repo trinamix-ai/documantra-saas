@@ -1,0 +1,11 @@
+services:
+  flask-oracle:
+    build: .
+    container_name: flask-oracle-thick
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_CONFIG_PATH=/app/config/database_with_pool.config
+    volumes:
+      - ./config:/app/config:ro
+    restart: unless-stopped

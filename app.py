@@ -1,6 +1,6 @@
 import os
 from flask import Flask, jsonify
-from dbconnection_with_pool import DatabaseClient
+from dbconnection import DatabaseClient
 
 def create_app() -> Flask:
     app = Flask(__name__)

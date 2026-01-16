@@ -2,7 +2,7 @@
 dbconnection.py
 
 Oracle Database client using connection pool.
-All DB + pool configuration is read from database_with_pool.config
+All DB + pool configuration is read from database.config
 """
 
 from __future__ import annotations
@@ -46,8 +46,8 @@ def load_properties(path: str) -> Dict[str, str]:
 def load_db_config(path: str) -> DBConfig:
     p = load_properties(path)
 
-    user = p.get("user") or p.get("dbuser")
-    password = p.get("password") or p.get("dbpassword")
+    user = p.get("user") or p.get("user")
+    password = p.get("password") or p.get("password")
     dsn = p.get("dsn")
 
     if not all([user, password, dsn]):
